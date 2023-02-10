@@ -33,15 +33,16 @@
         <!-- Desktop sidebar -->
         <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
             <div class="py-4 text-gray-500 dark:text-gray-400">
-                <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
-                    Windmill
+                <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+                    href="{{ route('admin.dashboard') }}">
+                    Lunar Cinema
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-fuchsia-800 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="index.html">
+                            href="{{ route('admin.dashboard') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -55,14 +56,14 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="forms.html">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
-                                </path>
+                            href="{{ route('admin.users.index') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                             </svg>
-                            <span class="ml-4">Forms</span>
+
+                            <span class="ml-4">Users</span>
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
