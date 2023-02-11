@@ -44,6 +44,7 @@
                             <th class="px-4 py-3">#</th>
                             <th class="px-4 py-3">Name</th>
                             <th class="px-4 py-3">Email</th>
+                            <th class="px=4 py-3">Role</th>
                             <th class="px-4 py-3">Created At</th>
                             <th class="px-4 py-3">Actions</th>
                         </tr>
@@ -60,12 +61,22 @@
                                 <td class="px-4 py-3 text-xs">
                                     {{ $user->email }}
                                 </td>
+                                <td>
+                                    <span
+                                        class="px-2 py-1 font-normal capitalize leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        @foreach ($user->getRoleNames() as $role)
+                                            <small>
+                                                {{ $role }}
+                                            </small>
+                                        @endforeach
+                                    </span>
+                                </td>
                                 <td class="px-4 py-3 text-sm">
-                                    {{ $user->created_at }}
+                                    {{ $user->created_at->toDayDateTimeString() }}
                                 </td>
                                 <td class="px-4 py-3">
                                     <div class="flex items-center space-x-4 text-sm">
-                                        <a href="{{ route('admin.users.edit', $user->id) }}"
+                                        <a href="{{ route('admin.users.role', $user->id) }}"
                                             class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                             aria-label="Edit">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -75,16 +86,6 @@
                                             </svg>
                                         </a>
 
-                                        <a href="{{ route('admin.users.edit', $user->id) }}"
-                                            class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                            aria-label="Edit">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-                                            </svg>
-
-                                        </a>
                                         <a href="{{ route('admin.users.edit', $user->id) }}"
                                             class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                             aria-label="Edit">

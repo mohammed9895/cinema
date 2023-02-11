@@ -40,6 +40,13 @@ Route::middleware(['auth', 'verified', 'role:admin'])->name('admin.')->prefix('a
 
     // Users
     Route::resource('/users', UserController::class);
+    route::get('/users/{user}/role', [UserController::class, 'role'])->name('users.role');
+
+    Route::post('/users/{user}/roles', [UserController::class, 'attachRole'])->name('users.roles');
+    Route::delete('/users/{user}/roles/{role}', [UserController::class, 'detachRole'])->name('users.roles.detach');
+
+    Route::post('/users/{user}/permissions', [UserController::class, 'attachPermission'])->name('users.permissions');
+    Route::delete('/users/{user}/permissions/{permission}', [UserController::class, 'detachPermission'])->name('users.permissions.detach');
 
 });
 
